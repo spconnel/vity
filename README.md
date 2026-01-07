@@ -165,7 +165,7 @@ uv pip install -e ".[dev]"
 
 ```bash
 # Install build tools
-pip install build
+uv pip install build
 
 # Build the package
 python -m build
@@ -176,11 +176,10 @@ This creates distribution files in the `dist/` directory.
 ### Running Tests
 
 ```bash
-# Install test dependencies
-uv pip install -e ".[dev]"
-
-# Run tests (if available)
+# Run tests when available
 pytest
+
+# Note: Test infrastructure is currently being developed
 ```
 
 ### Code Quality

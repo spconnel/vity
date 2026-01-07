@@ -151,7 +151,12 @@ cd vity
 
 ```bash
 # Install uv (fast Python package installer)
+# Option 1: Direct install (verify script at https://astral.sh/uv/install.sh first)
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Option 2: Via package manager (more secure)
+# Homebrew (macOS/Linux): brew install uv
+# Or check https://github.com/astral-sh/uv for other installation methods
 
 # Create a virtual environment and install dependencies
 uv venv
@@ -176,7 +181,11 @@ This creates distribution files in the `dist/` directory.
 ### Running Tests
 
 ```bash
-# Run tests when available
+# Run tests when available (requires pytest)
+# Install pytest if not already installed
+uv pip install pytest
+
+# Run tests
 pytest
 
 # Note: Test infrastructure is currently being developed

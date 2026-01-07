@@ -135,6 +135,82 @@ pip uninstall vity   # if installed with pip
 - Terminal history only sent during recording or with `-f` flag
 - No data stored on external servers (except API calls)
 
+## 🛠️ Development
+
+Want to contribute or work on Vity? Here's how to get started:
+
+### Clone the Repository
+
+```bash
+# Clone the repository
+git clone https://github.com/kaleab-ayenew/vity.git
+cd vity
+```
+
+### Setup Development Environment
+
+```bash
+# Install uv (fast Python package installer)
+# Option 1: Direct install (verify script at https://astral.sh/uv/install.sh first)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Option 2: Via package manager (more secure)
+# Homebrew (macOS/Linux): brew install uv
+# Or check https://github.com/astral-sh/uv for other installation methods
+
+# Create a virtual environment and install dependencies
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install the package in editable mode with dev dependencies
+uv pip install -e ".[dev]"
+```
+
+### Build the Package
+
+```bash
+# Install build tools
+uv pip install build
+
+# Build the package
+python -m build
+```
+
+This creates distribution files in the `dist/` directory.
+
+### Running Tests
+
+```bash
+# Run tests when available (requires pytest)
+# Install pytest if not already installed
+uv pip install pytest
+
+# Run tests
+pytest
+
+# Note: Test infrastructure is currently being developed
+```
+
+### Code Quality
+
+```bash
+# Format code with black
+black src/
+
+# Lint with ruff
+ruff check src/
+
+# Type checking with mypy
+mypy src/
+```
+
+### Making Changes
+
+1. Create a new branch for your feature/fix
+2. Make your changes
+3. Test your changes locally
+4. Submit a pull request
+
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file.
